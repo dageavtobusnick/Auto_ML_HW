@@ -31,9 +31,7 @@ jobs:
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: my-docker-hub-namespace/my-docker-hub-repository
-
-      - id: commit
-        uses: prompt/actions-commit-hash@v3
+          
         
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
@@ -41,5 +39,5 @@ jobs:
           context: ./lab3
           file: ./lab3/Dockerfile
           push: true
-          tags: ${{ env.branch }}:${{steps.commit.outputs.short}}
+          tags: ${{ github.ref_name }}:${{GITHUB_SHA}}
           labels: ${{ steps.meta.outputs.labels }}
