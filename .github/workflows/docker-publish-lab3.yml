@@ -38,5 +38,5 @@ jobs:
           context: .
           file: ./lab3/Dockerfile
           push: true
-          tags: ${{ env.branch +":"+ env.sha_short }}
+          tags: $(git rev-parse --short "$GITHUB_SHA")
           labels: ${{ steps.meta.outputs.labels }}
