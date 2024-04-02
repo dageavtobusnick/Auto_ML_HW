@@ -39,7 +39,7 @@ jobs:
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
           context: ./lab3
-          file: ./Dockerfile
+          file: ./lab3/Dockerfile
           push: true
           tags: ${{ env.branch }}${{steps.commit.outputs.short}}
           labels: ${{ steps.meta.outputs.labels }}
