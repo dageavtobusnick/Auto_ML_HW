@@ -39,5 +39,5 @@ jobs:
           context: ./lab3
           file: ./lab3/Dockerfile
           push: true
-          tags: ${{ github.ref_name }}:${{github.sha }}
+          tags: ${{ env.REGISTRY }}/${{ env.NAME }}:${{github.sha }}${{ github.ref_name }}
           labels: ${{ steps.meta.outputs.labels }}
