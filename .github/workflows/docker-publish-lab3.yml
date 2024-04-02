@@ -41,5 +41,5 @@ jobs:
           context: ./lab3
           file: ./lab3/Dockerfile
           push: true
-          tags: ${{ env.branch }}$:{{steps.commit.outputs.short}}
+          tags: ${{ env.branch }}:${{steps.commit.outputs.short}}
           labels: ${{ steps.meta.outputs.labels }}
